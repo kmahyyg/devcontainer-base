@@ -1,0 +1,16 @@
+{
+    "name": "Patrick Young's Personal CodeSpace (Arch-Based)",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "settings": {
+        "terminal.integrated.shell.linux": "/usr/bin/zsh"
+    },
+    "forwardPorts": [8000, 2222],
+    "postCreateCommand": "",
+    "extensions": [
+        "MS-vsliveshare.vsliveshare-pack",
+        "GitHub.vscode-pull-request-github",
+        "VisualStudioExptTeam.vscodeintellicode"
+    ]
+}
