@@ -4,7 +4,8 @@ RUN echo "" >> /etc/pacman.conf && \
     echo "[archlinuxcn]" >> /etc/pacman.conf && \
     echo "Server = https://repo.archlinuxcn.org/\$arch" >> /etc/pacman.conf
 
-RUN pacman -Syy && \
+RUN rm -rf /etc/pacman.d/gnupg; pacman-key --init; pacman-key --populate archlinux && \
+    pacman -Syy && \
     pacman -Su --noconfirm archlinux-keyring archlinuxcn-keyring && \
     pacman -S --noconfirm zsh sudo python python-pip python2 python2-pip supervisor git && \
     pacman -S --noconfirm python-setuptools python2-setuptools curl wget && \
