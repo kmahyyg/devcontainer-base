@@ -11,4 +11,10 @@ RUN rm -rf /etc/pacman.d/gnupg; pacman-key --init; pacman-key --populate archlin
     pacman -S --noconfirm python-setuptools python2-setuptools curl wget && \
     pacman -S --noconfirm ca-certificates openssh zip jq p7zip nano vim && \
     pacman -S --noconfirm go oh-my-zsh-git delve go-tools gopls && \
-    pacman -S --noconfirm diff-so-fancy
+    pacman -S --noconfirm diff-so-fancy && \
+    mkdir -p /root/go && \
+    export GOPATH=/root/go && \
+    export PATH=${GOPATH}/bin:$GOPATH
+
+ENV GOPATH=/root/go 
+
